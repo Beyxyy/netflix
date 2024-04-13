@@ -1,0 +1,123 @@
+:root{
+  --red : rgb(229, 9, 20);
+  --grey : rgba(128, 128, 128, 0.3);
+  --text-grey  : rgba(255, 255, 255, 0.7);
+  --margin-medium : 3rem;
+}
+#root{
+  margin : 0;
+  padding : 0
+}
+
+.logo{
+  path{
+    fill : var(--red);
+  }
+}
+
+.signup{
+  background: url("../public/banner_login.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+
+
+  .signup-bg-black{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    @media screen and (min-width : 600px){
+      background-color: rgba(0, 0, 0, 0.50);
+    }
+
+    main{
+      height: 100%;
+      .content{
+        height: 100%;
+
+        .banner{
+          width: fit-content;
+        }
+
+          .form{
+            height: fit-content;
+            width: 60%;
+            padding: 2rem;
+            margin : auto;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.75);
+            
+            .form-floating>.form-control:focus~label::after{
+              background-color: transparent;
+            }
+
+            label{
+              margin-left: 0.5rem;
+              color : white;
+            }
+
+            h1{
+              margin-right : auto;
+            }
+            
+            .form-check{
+              display: flex;
+              justify-content: start;
+              label{
+                margin-left: 0.5rem;
+                color : white;
+              }
+            }
+
+            span{
+              color : var(--text-grey); 
+            
+              b{
+              color : white; 
+              }
+            }
+            input[type="text"], input[type="password"]{
+              margin: 10px 0;
+              padding: 10px;
+              border-radius: 0.25rem;
+              background-color: var(--grey);
+              color: white;
+              font-weight: 700;
+              border: none;
+            }           
+            
+            .btn-signup{
+              background-color: var(--red);
+              color: white;
+              margin-top : calc(var(--margin-medium) / 2);
+              margin-bottom : calc(var(--margin-medium) / 2);
+              padding : 1rem;
+              font-weight: 700;
+              border-radius: 0.25rem;
+              &:hover{
+                background-color: var(--red);
+              }
+            }
+            .signup-code{
+              border-radius: 0.25rem;
+              background-color: var(--grey);
+              color: white;
+              padding : 0.75rem;
+              font-weight: 700;
+              margin-top : calc(var(--margin-medium) / 2);
+              margin-bottom : calc(var(--margin-medium) / 2);
+            }
+          } 
+      }
+        
+    }
+  }
+}
