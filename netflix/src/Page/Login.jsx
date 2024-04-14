@@ -1,29 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
 import logo from '/logo.svg';
+import LoginForm from '../Components/LoginForm';
+import background from '/background_login.jpg';
 
 const Login = () => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [remember, setRemember] = useState(false);
-
-    const handleSubmitButtun = () => {
-        setEmail(document.querySelector('#floatingId').value);
-        setPassword(document.querySelector('#floatingPassword').value);
-        if (document.querySelector('#remember').checked) {
-            setRemember(true);
-        }
-        console.log(email)
-        console.log(password)
-        console.log(remember)
-    }
+    
 
 
     return (
         <div className='signup'>
+            <img src={background} alt="background" className='login_bg'/>
             <div className='signup-bg-black'>
                 <main>
                     <div className='content'>
@@ -35,34 +23,7 @@ const Login = () => {
                                 </g>
                             </svg>
                         </div>
-                        <div className='form'>
-                            <h1>S'identifier</h1>
-                            <FloatingLabel
-                                controlId="floatingId"
-                                label="E-mail ou numéro de téléphone"
-                                className="mb-3"
-                            >
-                                <Form.Control type="text" placeholder="E-mail ou numéro de téléphone" onChange={e => setEmail(e.target.value)}/>
-                            </FloatingLabel>
-
-                            <FloatingLabel controlId="floatingPassword" label="Mot de passe">
-                                <Form.Control type="password" placeholder="Mot de passe" onChange={e => setPassword(e.target.value)} />
-                            </FloatingLabel>
-                            <button className='btn-signup' onClick={handleSubmitButtun}>S'identifier</button>
-                                <span>OU</span>
-                            <button className="signup-code">Utiliser un code d'identification</button>
-                            <p>Mot de passe oublié</p>
-                            <Form.Check type='checkbox'>
-                                <Form.Check.Input type='checkbox' id='remember' isValid onChange={e => {
-                                    setRemember(e.target.value == 'on' ? true : false)
-                                    }
-                                } />
-                                <Form.Check.Label>Se souvenir de moi</Form.Check.Label>
-                            </Form.Check>
-
-
-                            <p>Première fois sur Netflix <b>Inscrivez-vous</b></p>
-                        </div>
+                        <LoginForm/>
                     </div>
                 </main>
             </div>

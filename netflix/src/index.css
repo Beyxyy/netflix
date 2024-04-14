@@ -6,7 +6,12 @@
 }
 #root{
   margin : 0;
-  padding : 0
+  padding : 0;
+  max-width: 100vw;
+}
+
+.hide{
+  display: none !important;
 }
 
 .logo{
@@ -16,13 +21,23 @@
 }
 
 .signup{
-  background: url("../public/banner_login.jpg");
-  background-size: cover;
   height: 100vh;
+  max-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  .login_bg{
+    position : absolute;
+    left: 0;
+    bottom : 0;
+    z-index : -1;
+    @media screen and (max-width : 600px){
+      display: none;
+    }
+  }
 
   
 
@@ -46,7 +61,7 @@
 
           .form{
             height: fit-content;
-            width: 60%;
+            width: 40%;
             padding: 2rem;
             margin : auto;
             color: white;
